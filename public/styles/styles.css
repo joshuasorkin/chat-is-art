@@ -1,0 +1,41 @@
+
+#container {
+  width: 700px;
+  margin: 0 auto;
+}
+.chat-input,.username-input {
+  width: 300px;
+  height: 35px;
+  border: solid 1px #444;
+}
+.chat-submit {
+  width: 50px;
+  height: 35px;
+  border: solid 1px #444;
+}
+.chat-window {
+  height: 300px;
+  width: 500px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+#chatRegion {
+  float: left;
+  border: 1px grey solid;
+  border-radius: 10px;
+  padding: 10px;
+}
+.username-submit{
+  width: 120px;
+  height: 35px;
+  border: solid 1px #444;
+}
+
+.hide{
+  display: none;
+}
+
+.login-input{
+  margin-bottom: 20px;
+  display:block;
+}

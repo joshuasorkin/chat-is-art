@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chatabolic</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <div id="container">
+            <h1>
+                Chatabolic
+            </h1>
+            <div class="container">
+                <input id="txtEmail" type="email" class="login-input" placeholder="Email">
+                <input id="txtPassword" type="password" class="login-input" placeholder="Password">
+                <button id="btnLogin" class="btn btn-action">
+                    Log in
+                </button>
+                <button id="btnSignup" class="btn btn-secondary">
+                    Sign up
+                </button>
+                <button id="btnLogout" class="btn btn-action hide">
+                    Log out
+                </button>
+            </div>
+    
+
+            <div id="chatRegion">
+                <div class="chat-window"></div>
+                <form class="chat-form">
+                    <label class="chat-label">
+                        Message to send:
+                        <input type="text" class="chat-input" />
+                    </label>
+                    <input type="submit" class="chat-submit" value="Send" />
+                    <p></p>
+                    <label class="chat-error" value=" "></label>
+                    <p></p>
+                </form>
+                    
+                <form class="username-form">
+                  <label class="current-username">Current username: </label>
+                  <label class="username-display" value=" "></label>
+                  <p></p>
+                  <label class="username-label">
+                      Update username:
+                      <input type="text" class="username-input" />
+                  </label>
+                  <input type="submit" class="username-submit" value="Update username" />
+                  <p></p>
+                  <label class="username-response" value=" "></label>
+                </form>
+            </div>
+        </div>
+
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+
+        <script src="socket.io/socket.io.js"></script>
+        <script src="script.js"></script>
+        <script src="auth-login.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+        <script src="firebase.js"></script>
+        <!-- The surrounding HTML is left untouched by FirebaseUI.
+            Your app may use that space for branding, controls and other customizations.-->
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chatabolic</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Firebase -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <h1>Chatabolic</h1>
+        <p></p>
+        <div class="container">
+            <input id="txtEmail" type="email" class="login-input" placeholder="Email">
+            <input id="txtPassword" type="password" class="login-input" placeholder="Password">
+            <button id="btnLogin" class="btn btn-action">
+                Log in
+            </button>
+            <button id="btnSignup" class="btn btn-secondary">
+                Sign up
+            </button>
+            <button id="btnLogout" class="btn btn-action hide">
+                Log out
+            </button>
+        </div>
+
+        <script src="auth.js"></script>
+    </body>
+</html>
