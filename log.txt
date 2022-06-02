@@ -6,17 +6,4 @@ xay: aaaa
 xay: aasdsf
 xay: now
 xaq: more data down here
-test: there is @test
-abc: yes <strong>@abc</strong>
-newInput: i am <strong>@newInput</strong>
-fsol: this is <strong>@fsol</strong>
-fsol: where is @nobody
-fsol: hello 
-fsol: hello <strong>@newInput</strong>
-graowgo: grorrogo
-blonko: frobrish
-blonko: gumdrop
-silnaya: great scott
-silnaya: sdfaasdg
-fnord: swippity swoptext: I am @aber
-text: <a href="http://google.com">secure?</a>
+

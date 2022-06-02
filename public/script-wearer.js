@@ -8,7 +8,7 @@ const chatText = document.getElementById('chat-text');
 
 
 const renderMessage = message => {
-    chatText.innerHTML = message;
+    chatText.innerText = message;
 }
 
 //add event listener for receiving 'chat' message from server
@@ -16,4 +16,8 @@ socket.on('chat',message=>{
     //modify UI to add the received message
     renderMessage(message);
     console.log(message);
+});
+
+socket.on('previous_messages',(dataArray)=>{
+    renderMessage(dataArray[dataArray.length-1]);
 });
