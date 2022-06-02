@@ -61,7 +61,7 @@ io.on('connection',socket=>{
     //get 'chat' event from client and broadcast the message
     socket.on('chat',message =>{
 
-        message=mentionChecker.formatMentions(message);
+        //message=mentionChecker.formatMentions(message);
         var broadcastMessage;
         broadcastMessage=`${socket.username}: ${message}`;
         io.emit('chat',broadcastMessage);
