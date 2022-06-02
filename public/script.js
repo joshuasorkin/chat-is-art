@@ -68,7 +68,13 @@ username.addEventListener('submit',event =>{
 socket.on('chat',message=>{
     //modify UI to add the received message
     renderMessage(message);
-})
+});
+
+//add event listener for receiving 'chat-config' message so that we can filter them out on the wearer page
+socket.on('chat-config',message=>{
+    //modify UI to add the received message
+    renderMessage(message);
+});
 
 //add event listener for receiving 'username_update' message from server
 socket.on('username_update',(message,username)=>{

@@ -78,10 +78,10 @@ io.on('connection',socket=>{
         if(nameChecker.getIDFromName(username)===null){
             nameChecker.addIDAndName(socket.id,username);
             if (socket.hasOwnProperty("username")){
-                io.emit('chat',`${socket.username} has changed their name to "${username}".`);
+                io.emit('chat-config',`${socket.username} has changed their name to "${username}".`);
             }
             else{
-                io.emit('chat',`${username} is ready to chat.`)
+                io.emit('chat-config',`${username} is ready to chat.`)
             }
 
             socket.username=username;
