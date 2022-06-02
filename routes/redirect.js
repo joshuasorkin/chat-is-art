@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const firebaseAdmin = require('../firebase-admin');
+//const firebaseAdmin = require('../firebase-admin');
 
 router.post('/',(req,res)=>{
     res.render()
