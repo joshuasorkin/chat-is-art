@@ -21,8 +21,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "firebase-admin": "^9.11.0",
-    "fs": "0.0.1-security",
-    "http": "0.0.1-security",
+    "fs": "*",
+    "http": "*",
     "path": "^0.12.7",
     "pug": "^3.0.2",
     "socket.io": "^4.1.3"
