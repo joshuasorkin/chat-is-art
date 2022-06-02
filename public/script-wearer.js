@@ -19,5 +19,6 @@ socket.on('chat',message=>{
 });
 
 socket.on('previous_messages',(dataArray)=>{
-    renderMessage(dataArray[dataArray.length-1]);
+    let filtered = dataArray.filter(item => item.length>0);
+    renderMessage(filtered[filtered.length-1]);
 });
