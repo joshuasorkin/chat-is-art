@@ -2,6 +2,7 @@
 html, body { margin:0; padding:0; overflow:hidden }
 /*svg { position:fixed; top:0; bottom:0; left:0; right:0 }*/
 
+/*
 .box {
     display: flex;
     align-items: center;
@@ -13,14 +14,19 @@ html, body { margin:0; padding:0; overflow:hidden }
     width: 100px;
     height: 100px;
   }
+*/
 
 .textBox{
-    display: flex;
-    color: white; 
-    background-color: blue;
-    font-size: 10vw;
-    position: absolute;
-    top:0
+    background-color: orangered;
+  color: white;
+  font-size: clamp(1rem, 10vmin, 6rem);
+  padding: 2rem;
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
 }
 
 
