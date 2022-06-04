@@ -8,7 +8,7 @@ const chatText = document.getElementById('chat-text');
 
 
 const renderMessage = message => {
-    chatText.innerText = message;
+    chatText.innerHTML = message;
 }
 
 //add event listener for receiving 'chat' message from server
