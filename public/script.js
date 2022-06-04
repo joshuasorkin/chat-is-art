@@ -10,6 +10,11 @@ const username = document.querySelector('.username-form');
 const usernameInput = document.querySelector('.username-input');
 const usernameDisplay = document.querySelector('.username-display');
 const usernameResponse = document.querySelector('.username-response');
+const imgWrap = document.getElementById("imgWrap");
+
+function imgWrapClick(){
+    chatInput.value = `<img src="${chatInput.value}" />`
+}
 
 const renderMessage = message => {
     const div = document.createElement('div')
