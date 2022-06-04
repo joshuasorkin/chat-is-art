@@ -23,25 +23,45 @@ chat.addEventListener('submit',event =>{
     //prevent page from reloading on form submission
     event.preventDefault();
 
-    if(usernameDisplay.value===undefined){
-        //chatError.innerText="Cannot send message with blank username."
-        chatError.innerHTML=("<strong>Cannot send message with blank username.</strong>");
-        setTimeout(function(){
-            chatError.innerHTML=""
-        },2000)
+    if (chatInput.value.trim().length > 0){
+        sendChatMessageToServer();
     }
     else{
-        /*send an event called 'chat' to server-side socket
-        carrying the submitted chat message*/
-        socket.emit('chat',chatInput.value);
-        //reset chat input field to blank once the message has been sent
-        chatInput.value = '';
+        chatErrorFadeout("Chat message cannot be blank.")
     }
+    /*
+    if(usernameDisplay.value===undefined){
+        chatErrorFadeout("Cannot send message with blank username.");
+    }
+    else{
+        sendChatMessageToServer();
+    }
+    */
 });
+
+
+function sendChatMessageToServer(){
+    //send an event called 'chat' to server-side socket
+    //carrying the submitted chat message
+    socket.emit('chat',chatInput.value);
+    //reset chat input field to blank once the message has been sent
+    chatInput.value = '';
+}
+
+function chatErrorFadeout(errorMsg){
+    chatError.innerHTML=(`<strong>${errorMsg}</strong>`);
+    setTimeout(function(){
+        chatError.innerHTML=""
+    },2000)
+}
+
+
+
 
 //add event listener to username submit button
 //todo: some of the code overlaps with chat.addEventListener()
 //so maybe it can be refactored into a common addEventListenerToSubmit() function?
+
 username.addEventListener('submit',event =>{
     //prevent page from reloading on form submission
     event.preventDefault();
@@ -62,7 +82,7 @@ username.addEventListener('submit',event =>{
         chatInput.value = '';
     }
 
-})
+});
 
 //add event listener for receiving 'chat' message from server
 socket.on('chat',message=>{
