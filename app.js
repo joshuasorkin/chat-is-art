@@ -63,7 +63,12 @@ io.on('connection',socket=>{
 
         //message=mentionChecker.formatMentions(message);
         var broadcastMessage;
-        broadcastMessage=`${socket.username}: ${message}`;
+        if (socket.username === undefined){
+            broadcastMessage = message;
+        }
+        else{
+            broadcastMessage=`${socket.username}: ${message}`;
+        }
         io.emit('chat',broadcastMessage);
         fs.appendFile("log.txt",`${broadcastMessage}\n`,function(err) {     
             if (err) throw err;
