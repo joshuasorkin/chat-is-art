@@ -14,7 +14,7 @@ const usernameResponse = document.querySelector('.username-response');
 const renderMessage = message => {
     const div = document.createElement('div')
     div.classList.add('render-message');
-    div.innerText = message;
+    div.innerHTML = message;
     chatWindow.appendChild(div);
     div.scrollIntoView();
 }
