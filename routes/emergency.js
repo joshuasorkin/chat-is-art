@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-        fs.writeFile('../log.txt', '', function(){console.log('done')})
+        fs.writeFile('../log.txt', '')
         .then(result=>{
             res.send(`log file cleared.  ${result}`);
         })
