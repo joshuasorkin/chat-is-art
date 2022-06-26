@@ -17,7 +17,7 @@ html, body { margin:0; padding:0; overflow:hidden }
 */
 
 .textBox{
-    background-color: orangered;
+    background-color: black;
   color: white;
   font-size: clamp(1rem, 10vmin, 6rem);
   padding: 2rem;
