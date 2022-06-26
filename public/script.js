@@ -11,9 +11,14 @@ const usernameInput = document.querySelector('.username-input');
 const usernameDisplay = document.querySelector('.username-display');
 const usernameResponse = document.querySelector('.username-response');
 const imgWrap = document.getElementById("imgWrap");
+const iframeWrap = document.getElementById("iframeWrap");
 
 function iframeWrapClick(){
     chatInput.value = `<iframe src="${chatInput.value}" />`
+}
+
+function imgWrapClick(){
+    chatInput.value = `<img src="${chatInput.value}" />`
 }
 
 const renderMessage = message => {
