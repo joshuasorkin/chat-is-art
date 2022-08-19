@@ -76,7 +76,7 @@ io.on('connection',socket=>{
         io.emit('chat',broadcastMessage);
         entityExtractor.analyze(message)
             .then(entities=>{
-                io.emit('entities',entities);
+                io.emit('entities',JSON.stringify(entities));
             })
         fs.appendFile("log.txt",`${broadcastMessage}\n`,function(err) {     
             if (err) throw err;
