@@ -6,6 +6,7 @@ const chat = document.querySelector('.chat-form');
 const chatInput = document.querySelector('.chat-input');
 const chatWindow = document.querySelector('.chat-window');
 const chatError = document.querySelector('.chat-error');
+const entityWindow = document.querySelector('.entity-window');
 const username = document.querySelector('.username-form');
 const usernameInput = document.querySelector('.username-input');
 const usernameDisplay = document.querySelector('.username-display');
@@ -28,6 +29,32 @@ const renderMessage = message => {
     chatWindow.appendChild(div);
     div.scrollIntoView();
 }
+
+const renderEntities = entitiesJSON => {
+    const div = document.createElement('div');
+    div.classList.add('render-entities');
+    div.innerHTML = parseEntities(entitiesJSON);
+    entityWindow.appendChild(div);
+    div.scrollIntoView();
+
+}
+
+//parse out entity text for display
+const parseEntities = entitiesJSON => {
+    let entities = JSON.parse(entitiesJSON);
+    let entityOutput = "";
+    entities.forEach(entity => {
+    let wikipedia;
+    if (entity.metadata && entity.metadata.wikipedia_url) {
+        wikipedia = ` - Wikipedia URL: ${entity.metadata.wikipedia_url}`;
+    }
+    entityOutput = [entity.name,
+                    ` - Type: ${entity.type}, Salience: ${entity.salience}`,
+                    wikipedia].join("\n");
+    });
+    return entityOutput;
+}
+
 //add event listener to chat submit button
 chat.addEventListener('submit',event =>{
     //prevent page from reloading on form submission
@@ -99,6 +126,10 @@ socket.on('chat',message=>{
     //modify UI to add the received message
     renderMessage(message);
 });
+
+socket.on('entities',entitiesJSON=>{
+    renderEntities(entitiesJSON);
+})
 
 //add event listener for receiving 'chat-config' message so that we can filter them out on the wearer page
 socket.on('chat-config',message=>{

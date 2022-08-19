@@ -18,12 +18,16 @@ const NameChecker = require('./NameChecker');
 const MentionChecker = require('./MentionChecker');
 const User = require('./User');
 const RouterLoader = require('./routerLoader');
+const EntityExtractor = require('./entity-extractor');
 
 //init view engine
 app.set('view engine','pug');
 
 //initialize name checker
 const nameChecker=new NameChecker();
+
+//init entity extractor
+const entityExtractor = new EntityExtractor();
 
 //init mention checker
 const mentionChecker=new MentionChecker(nameChecker);
@@ -70,6 +74,10 @@ io.on('connection',socket=>{
             broadcastMessage=`${socket.username}: ${message}`;
         }
         io.emit('chat',broadcastMessage);
+        entityExtractor.analyze(message)
+            .then(entities=>{
+                io.emit('entities',entities);
+            })
         fs.appendFile("log.txt",`${broadcastMessage}\n`,function(err) {     
             if (err) throw err;
             // if no error

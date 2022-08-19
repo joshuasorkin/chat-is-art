@@ -119,3 +119,6 @@ dist
 
 # firebase private key
 chatabolic-firebase-adminsdk*.*
+
+# google cloud services private key
+phone-transcription-*.json
